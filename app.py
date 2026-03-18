@@ -1,13 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 
-app = Flask(__name__)
+app = Flask(**name**)
 
 @app.route("/")
 def home():
-    return """
-    <h1>Welcome to ITCT Computer Institute, Nandurbar</h1>
-    <p>MS-CIT | Tally | Typing Courses Available</p>
-    """
+return render_template("index.html")
 
-if __name__ == "__main__":
-    app.run()
+if **name** == "**main**":
+app.run()
