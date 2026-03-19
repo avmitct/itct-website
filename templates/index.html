@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITCT Computer Institute, Nandurbar</title>
+    <title>ITCT Computer Education, Nandurbar</title>
 
 ```
 <!-- Bootstrap -->
@@ -12,25 +12,34 @@
 
 <style>
     body { font-family: Arial; }
+
     .hero {
-        background: linear-gradient(to right, #007bff, #00c6ff);
+        background: url('https://images.unsplash.com/photo-1581091870622-3c1d1f2f0f5c');
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         color: white;
-        padding: 80px 20px;
-        text-align: center;
     }
-    .section { padding: 60px 20px; }
-    .course-box {
+
+    .hero-box {
+        background: rgba(0,0,0,0.6);
         padding: 20px;
         border-radius: 10px;
-        background: #f8f9fa;
-        margin-bottom: 20px;
         text-align: center;
     }
+
+    .section { padding: 60px 20px; }
+
+    .card { box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+
     footer {
         background: #343a40;
         color: white;
         text-align: center;
-        padding: 20px;
+        padding: 15px;
     }
 </style>
 ```
@@ -43,25 +52,26 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="#">ITCT Computer</a>
+        <a class="navbar-brand" href="#">ITCT Computer Education</a>
     </div>
 </nav>
 
 <!-- Hero Section -->
 
 <div class="hero">
-    <h1>ITCT Computer Institute</h1>
-    <p>Empowering Students with Digital Skills</p>
-    <p>MS-CIT | Tally | Typing Courses (CCTP)</p>
+    <div class="hero-box">
+        <h1>ITCT Computer Education</h1>
+        <p>MS-CIT | Tally | Typing Courses (CCTP)</p>
+    </div>
 </div>
 
 <!-- About -->
 
-<div class="section container">
-    <h2 class="text-center mb-4">About Us</h2>
-    <p class="text-center">
-        ITCT Computer Institute, Nandurbar is a leading training center providing quality education 
-        in computer courses since 2002. We focus on practical learning and student success.
+<div class="section container text-center">
+    <h2>About Us</h2>
+    <p>
+        ITCT Computer Education, Nandurbar is a leading computer training center since 2002. 
+        We provide practical training in MS-CIT, Tally, and Typing courses(CCTP).
     </p>
 </div>
 
@@ -74,23 +84,23 @@
 ```
     <div class="row">
         <div class="col-md-4">
-            <div class="course-box">
+            <div class="card p-3 text-center">
                 <h4>MS-CIT</h4>
-                <p>Basic computer course with government certification.</p>
+                <p>Government certified computer course.</p>
             </div>
         </div>
 
         <div class="col-md-4">
-            <div class="course-box">
+            <div class="card p-3 text-center">
                 <h4>Tally</h4>
-                <p>Accounting course with GST and practical training.</p>
+                <p>Accounting with GST practical training.</p>
             </div>
         </div>
 
         <div class="col-md-4">
-            <div class="course-box">
+            <div class="card p-3 text-center">
                 <h4>Typing</h4>
-                <p>English & Marathi typing (CCTP) with speed improvement.</p>
+                <p>English & Marathi typing(CCTP) speed training.</p>
             </div>
         </div>
     </div>
@@ -99,25 +109,40 @@
 
 </div>
 
-<!-- Contact -->
+<!-- Gallery -->
 
 <div class="section container">
-    <h2 class="text-center mb-4">Contact Us</h2>
+    <h2 class="text-center mb-4">Our Lab</h2>
 
 ```
-<div class="text-center">
-    <p><strong>Address:</strong> Shop No.10, Krishna Complex,Ghee Bazar,Nandurbar 425412</p>
-    <p><strong>Mobile:</strong> 9422285998</p>
-    <p><strong>Email:</strong> 31210003@mkcl.org</p>
+<div class="row">
+    <div class="col-md-4">
+        <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0" class="img-fluid rounded">
+    </div>
+    <div class="col-md-4">
+        <img src="https://images.unsplash.com/photo-1581091215367-59ab6b3c1d3d" class="img-fluid rounded">
+    </div>
+    <div class="col-md-4">
+        <img src="https://images.unsplash.com/photo-1581092919535-7146ff1b2b05" class="img-fluid rounded">
+    </div>
 </div>
 ```
 
+</div>
+
+<!-- Contact -->
+
+<div class="section container text-center">
+    <h2>Contact Us</h2>
+    <p><strong>Address:</strong> Shop No.10, Krishna Complex, Ghee Bazar, Nandurbar</p>
+    <p><strong>Mobile:</strong> 9422285998</p>
+    <p><strong>Email:</strong> 31210003@mkcl.org</p>
 </div>
 
 <!-- Footer -->
 
 <footer>
-    <p>© 2026 ITCT Computer Institute, Nandurbar</p>
+    <p>© 2026 ITCT Computer Education, Nandurbar</p>
 </footer>
 
 </body>
