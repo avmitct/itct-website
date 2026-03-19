@@ -1,8 +1,13 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3
 import os
 
 app = Flask(__name__)
+app.secret_key = 'itct_secret_key_123'   # Required for login session
+
+# 🔐 ADMIN CREDENTIALS
+ADMIN_USERNAME = "itctadmin"
+ADMIN_PASSWORD = "itct@2026"
 
 # ---------------- DATABASE ----------------
 def get_db_connection():
@@ -64,9 +69,35 @@ def submit():
     return redirect(url_for('home'))
 
 
-# ---------------- VIEW STUDENTS ----------------
+# ---------------- ADMIN LOGIN ----------------
+@app.route('/admin', methods=['GET', 'POST'])
+def admin():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        if username == ADMIN_USERNAME and password == ADMIN_PASSWORD:
+            session['admin'] = True
+            return redirect(url_for('students'))
+        else:
+            return render_template('admin.html', error="Invalid Credentials")
+
+    return render_template('admin.html')
+
+
+# ---------------- LOGOUT ----------------
+@app.route('/logout')
+def logout():
+    session.pop('admin', None)
+    return redirect(url_for('admin'))
+
+
+# ---------------- VIEW STUDENTS (PROTECTED) ----------------
 @app.route('/students')
 def students():
+    if not session.get('admin'):
+        return redirect(url_for('admin'))  # 🔐 Protect route
+
     conn = get_db_connection()
     cursor = conn.cursor()
 
