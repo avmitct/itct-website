@@ -1,7 +1,64 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
+import sqlite3
+import os
 
 app = Flask(__name__)
 
-@app.route("/")
+# ---------------- DATABASE ----------------
+def init_db():
+    conn = sqlite3.connect('students.db')
+    cursor = conn.cursor()
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS students (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT,
+            dob TEXT,
+            course TEXT,
+            mobile TEXT,
+            address TEXT
+        )
+    ''')
+
+    conn.commit()
+    conn.close()
+
+init_db()
+
+# ---------------- ROUTES ----------------
+
+@app.route('/')
 def home():
-    return render_template("index.html")
+    return render_template('index.html')
+
+
+@app.route('/admission')
+def admission():
+    return render_template('admission.html')
+
+
+@app.route('/submit', methods=['POST'])
+def submit():
+    name = request.form['name']
+    dob = request.form['dob']
+    course = request.form['course']
+    mobile = request.form['mobile']
+    address = request.form['address']
+
+    conn = sqlite3.connect('students.db')
+    cursor = conn.cursor()
+
+    cursor.execute('''
+        INSERT INTO students (name, dob, course, mobile, address)
+        VALUES (?, ?, ?, ?, ?)
+    ''', (name, dob, course, mobile, address))
+
+    conn.commit()
+    conn.close()
+
+    return redirect(url_for('home'))
+
+
+# ---------------- RUN ----------------
+if __name__ == '__main__':
+    app.run(debug=True)
