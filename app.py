@@ -5,8 +5,13 @@ import os
 app = Flask(__name__)
 
 # ---------------- DATABASE ----------------
-def init_db():
+def get_db_connection():
     conn = sqlite3.connect('students.db')
+    conn.row_factory = sqlite3.Row
+    return conn
+
+def init_db():
+    conn = get_db_connection()
     cursor = conn.cursor()
 
     cursor.execute('''
@@ -45,7 +50,7 @@ def submit():
     mobile = request.form['mobile']
     address = request.form['address']
 
-    conn = sqlite3.connect('students.db')
+    conn = get_db_connection()
     cursor = conn.cursor()
 
     cursor.execute('''
@@ -57,6 +62,20 @@ def submit():
     conn.close()
 
     return redirect(url_for('home'))
+
+
+# ---------------- VIEW STUDENTS ----------------
+@app.route('/students')
+def students():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM students")
+    data = cursor.fetchall()
+
+    conn.close()
+
+    return render_template('students.html', students=data)
 
 
 # ---------------- RUN ----------------
