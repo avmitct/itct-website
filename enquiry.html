@@ -311,14 +311,27 @@
         <div class="success-overlay" id="successMsg">
           <div class="success-icon">🎉</div>
           <h2>Enquiry Submitted!</h2>
-          <p>Thank you for your interest in ITCT Computer Education. Our team will contact you within 24 hours to guide you further.</p>
-          <div style="margin-top:28px;padding:20px;background:rgba(26,58,92,0.05);border-radius:14px;">
-            <p style="font-size:14px;font-weight:500;color:var(--primary);margin-bottom:8px;">Meanwhile, you can:</p>
-            <p style="font-size:13px;margin-bottom:8px;">📞 Call us directly: <a href="tel:+919422285998" style="color:var(--accent);">+91 94222 85998</a></p>
-            <p style="font-size:13px;margin-bottom:8px;">💬 WhatsApp: <a href="https://wa.me/919422285998" style="color:var(--accent);">+91 94222 85998</a></p>
-            <p style="font-size:13px;">🌐 Visit: <a href="https://mscit.mkcl.org" style="color:var(--accent);" target="_blank">mscit.mkcl.org</a></p>
+          <p>Thank you for your interest in ITCT Computer Education.<br/>Your details are being sent to us on <strong>WhatsApp</strong>!</p>
+
+          <div style="margin-top:20px;background:rgba(37,211,102,0.1);border:1.5px solid rgba(37,211,102,0.3);border-radius:14px;padding:18px;text-align:center;">
+            <div style="font-size:32px;margin-bottom:8px;">💬</div>
+            <p style="font-size:14px;font-weight:600;color:#166534;margin-bottom:4px;">WhatsApp is opening automatically...</p>
+            <p style="font-size:13px;color:#166534;">Please press <strong>Send</strong> in WhatsApp to complete your enquiry.</p>
           </div>
-          <a href="index.html" class="btn btn-primary" style="margin-top:24px;">← Back to Home</a>
+
+          <div style="margin-top:20px;padding:16px;background:rgba(26,58,92,0.05);border-radius:14px;text-align:left;">
+            <p style="font-size:13px;font-weight:600;color:var(--primary);margin-bottom:10px;">If WhatsApp didn't open automatically:</p>
+            <a href="#" id="waManualLink" class="btn btn-primary btn-full" style="justify-content:center;background:#25d366;font-size:14px;">
+              💬 Open WhatsApp Manually
+            </a>
+          </div>
+
+          <div style="margin-top:16px;padding:16px;background:rgba(26,58,92,0.05);border-radius:14px;">
+            <p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">Or contact us directly:</p>
+            <p style="font-size:13px;margin-bottom:4px;">📞 <a href="tel:+919422285998" style="color:var(--accent);">+91 94222 85998</a></p>
+            <p style="font-size:13px;">✉️ <a href="mailto:31210003@mkcl.org" style="color:var(--accent);">31210003@mkcl.org</a></p>
+          </div>
+          <a href="index.html" class="btn btn-primary" style="margin-top:20px;">← Back to Home</a>
         </div>
       </div>
 
@@ -376,9 +389,74 @@
 <script>
 function submitEnquiry(e) {
   e.preventDefault();
+
+  // Collect all form values
+  const fname     = document.getElementById('e-fname').value.trim();
+  const lname     = document.getElementById('e-lname').value.trim();
+  const phone     = document.getElementById('e-phone').value.trim();
+  const altPhone  = document.getElementById('e-alt-phone').value.trim();
+  const email     = document.getElementById('e-email').value.trim();
+  const dob       = document.getElementById('e-dob').value;
+  const gender    = document.querySelector('input[name="gender"]:checked')?.value || 'Not specified';
+  const address   = document.getElementById('e-address').value.trim();
+  const city      = document.getElementById('e-city').value.trim();
+  const taluka    = document.getElementById('e-taluka').value.trim();
+  const edu       = document.getElementById('e-edu').value;
+  const occ       = document.getElementById('e-occupation').value;
+  const batch     = document.getElementById('e-batch').value;
+  const medium    = document.querySelector('input[name="medium"]:checked')?.value || 'Not specified';
+  const source    = document.getElementById('e-source').value;
+  const remarks   = document.getElementById('e-remarks').value.trim();
+
+  // Collect selected courses
+  const courseChecks = document.querySelectorAll('input[name="course"]:checked');
+  const courses = courseChecks.length > 0
+    ? Array.from(courseChecks).map(c => c.value).join(', ')
+    : 'Not specified';
+
+  // Build WhatsApp message
+  const msg =
+`📋 *NEW STUDENT ENQUIRY*
+📅 Date: ${new Date().toLocaleDateString('en-IN', {day:'2-digit', month:'short', year:'numeric'})}
+━━━━━━━━━━━━━━━━━━
+👤 *Student Details*
+• Name: ${fname} ${lname}
+• Phone: ${phone}${altPhone ? '\n• WhatsApp: ' + altPhone : ''}${email ? '\n• Email: ' + email : ''}${dob ? '\n• DOB: ' + dob : ''}
+• Gender: ${gender}
+
+📍 *Address*
+• City/Village: ${city}${taluka ? '\n• Taluka: ' + taluka : ''}${address ? '\n• Address: ' + address : ''}
+
+🎓 *Education & Occupation*
+• Qualification: ${edu || 'Not specified'}
+• Occupation: ${occ || 'Not specified'}
+
+📚 *Course Interest*
+• Course(s): ${courses}
+• Batch Timing: ${batch || 'Not specified'}
+• Medium: ${medium}
+
+📢 *Heard from:* ${source || 'Not specified'}
+${remarks ? '\n💬 *Remarks:*\n' + remarks : ''}
+━━━━━━━━━━━━━━━━━━
+Sent via itctnandurbar.com`;
+
+  // Open WhatsApp with pre-filled message
+  const encodedMsg = encodeURIComponent(msg);
+  const waURL = `https://wa.me/919422285998?text=${encodedMsg}`;
+
+  // Show success screen
   document.getElementById('formWrapper').style.display = 'none';
   document.getElementById('successMsg').classList.add('show');
   window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Set manual WhatsApp link
+  document.getElementById('waManualLink').href = waURL;
+
+  // Open WhatsApp after short delay
+  setTimeout(() => {
+    window.open(waURL, '_blank');
+  }, 800);
 }
 </script>
 
