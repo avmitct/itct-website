@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – ITCT Computer Education, Nandurbar</title>
+  <meta name="description" content="Contact ITCT Computer Education in Nandurbar. Call, email or visit us to enquire about MS-CIT and KLiC courses." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .map-placeholder {
+      background: linear-gradient(135deg, var(--primary), #1e4d7b);
+      border-radius: 16px;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      color: white;
+      text-align: center;
+      margin-top: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .map-placeholder .icon { font-size: 48px; }
+    .map-placeholder p { color: rgba(255,255,255,0.7); font-size: 14px; }
+    .timing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .timing-card {
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .timing-card .day { font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 4px; }
+    .timing-card .time { font-size: 12px; color: var(--text-muted); }
+    .timing-card.closed { opacity: 0.5; }
+    @media (max-width: 768px) {
+      .timing-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+<script src="nav.js"></script>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>We're here to help you start your digital journey</p>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <strong>Contact</strong>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="contact-grid">
+      <!-- LEFT: Info -->
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>Visit us at our centre, give us a call, or drop us an email. Our team is always ready to answer your queries about MS-CIT, KLiC courses, admissions, and anything else.</p>
+
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-detail">
+            <strong>Address</strong>
+            <span>ITCT Computer Education<br/>Nandurbar, Maharashtra – 425412<br/>India</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-detail">
+            <strong>Phone / WhatsApp</strong>
+            <span><a href="tel:+919422285998" style="color:var(--accent);">+91 98765 43210</a><br/>
+            <a href="tel:+912562220000" style="color:var(--accent);">02562-220000</a></span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-detail">
+            <strong>Email</strong>
+            <span><a href="mailto:info@itctnandurbar.com" style="color:var(--accent);">info@itctnandurbar.com</a></span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">🌐</div>
+          <div class="contact-detail">
+            <strong>Website</strong>
+            <span><a href="https://itctnandurbar.com" style="color:var(--accent);">itctnandurbar.com</a></span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">🔗</div>
+          <div class="contact-detail">
+            <strong>MKCL Official Sites</strong>
+            <span>
+              <a href="https://mscit.mkcl.org" target="_blank" style="color:var(--accent);">mscit.mkcl.org</a> &nbsp;|&nbsp;
+              <a href="https://klic.mkcl.org" target="_blank" style="color:var(--accent);">klic.mkcl.org</a>
+            </span>
+          </div>
+        </div>
+
+        <h4 style="color:var(--primary);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;margin-top:28px;margin-bottom:14px;">Centre Timings</h4>
+        <div class="timing-grid">
+          <div class="timing-card"><div class="day">Monday</div><div class="time">9:00 AM – 7:00 PM</div></div>
+          <div class="timing-card"><div class="day">Tuesday</div><div class="time">9:00 AM – 7:00 PM</div></div>
+          <div class="timing-card"><div class="day">Wednesday</div><div class="time">9:00 AM – 7:00 PM</div></div>
+          <div class="timing-card"><div class="day">Thursday</div><div class="time">9:00 AM – 7:00 PM</div></div>
+          <div class="timing-card"><div class="day">Friday</div><div class="time">9:00 AM – 7:00 PM</div></div>
+          <div class="timing-card"><div class="day">Saturday</div><div class="time">9:00 AM – 5:00 PM</div></div>
+        </div>
+        <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">⚠️ Closed on Sundays and public holidays</p>
+
+        <div class="map-placeholder">
+          <div class="icon">📍</div>
+          <h4 style="color:white;">ITCT Computer Education</h4>
+          <p>Nandurbar, Maharashtra</p>
+          <a href="https://maps.google.com/?q=Nandurbar+Maharashtra" target="_blank" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:600;margin-top:8px;display:inline-block;">Open in Google Maps ↗</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Quick Contact Form -->
+      <div class="form-card">
+        <h3>Send Us a Message</h3>
+        <div id="contactSuccess" class="alert alert-success alert-hidden">✅ Message sent! We'll get back to you shortly.</div>
+
+        <form id="contactForm" onsubmit="submitContact(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c-name">Full Name *</label>
+              <input type="text" id="c-name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="c-phone">Phone Number *</label>
+              <input type="tel" id="c-phone" placeholder="+91 XXXXX XXXXX" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="c-email">Email Address</label>
+            <input type="email" id="c-email" placeholder="your@email.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="c-subject">Subject</label>
+            <select id="c-subject">
+              <option value="">Select a topic</option>
+              <option>MS-CIT Admission</option>
+              <option>KLiC Course Enquiry</option>
+              <option>Course Fee & Batches</option>
+              <option>Exam / Result Query</option>
+              <option>Certificate Download</option>
+              <option>General Information</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="c-message">Message *</label>
+            <textarea id="c-message" placeholder="Write your query here..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">Send Message →</button>
+        </form>
+
+        <div style="margin-top:24px;padding:16px;background:rgba(26,58,92,0.05);border-radius:10px;font-size:13px;color:var(--text-muted);">
+          💡 <strong>Quick Enquiry?</strong> WhatsApp us at <a href="https://wa.me/919876543210" style="color:var(--accent);">+91 98765 43210</a> for instant response.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quick Links Row -->
+<section style="background:white;padding:48px 0;">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Quick Access</span>
+      <h2>Important Links</h2>
+    </div>
+    <div class="why-grid" style="grid-template-columns:repeat(3,1fr);">
+      <a href="https://mscit.mkcl.org/admission-process" target="_blank" class="why-card" style="display:block;">
+        <div class="why-icon">📝</div>
+        <h3>MS-CIT Online Admission</h3>
+        <p>Enrol directly on MKCL's official portal. Visit our centre to complete the process.</p>
+      </a>
+      <a href="https://mscit.mkcl.org" target="_blank" class="why-card" style="display:block;">
+        <div class="why-icon">🖥️</div>
+        <h3>MS-CIT Official Website</h3>
+        <p>Access exam schedule, results, certificates, and course details on mscit.mkcl.org</p>
+      </a>
+      <a href="https://klic.mkcl.org" target="_blank" class="why-card" style="display:block;">
+        <div class="why-icon">🎓</div>
+        <h3>KLiC Official Website</h3>
+        <p>Explore all KLiC courses, sectors, and career opportunities on klic.mkcl.org</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+function submitContact(e) {
+  e.preventDefault();
+  document.getElementById('contactSuccess').classList.remove('alert-hidden');
+  document.getElementById('contactForm').reset();
+  setTimeout(() => {
+    document.getElementById('contactSuccess').classList.add('alert-hidden');
+  }, 5000);
+}
+</script>
+
+</body>
+</html>

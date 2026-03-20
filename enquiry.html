@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enquiry Form – ITCT Computer Education, Nandurbar</title>
+  <meta name="description" content="Enquire about MS-CIT and KLiC courses at ITCT Computer Education, Nandurbar. Fill the form and our team will contact you." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .enquiry-layout {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .form-section-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 28px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+    }
+    .form-section-title:first-child { margin-top: 0; }
+    .radio-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .radio-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      padding: 10px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .radio-label input { accent-color: var(--primary); }
+    .radio-label:has(input:checked) {
+      border-color: var(--primary);
+      background: rgba(26,58,92,0.05);
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      padding: 9px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 13px;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .checkbox-label input { accent-color: var(--primary); }
+    .checkbox-label:has(input:checked) {
+      border-color: var(--primary);
+      background: rgba(26,58,92,0.05);
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .side-info {
+      position: sticky;
+      top: 90px;
+    }
+    .info-box {
+      background: linear-gradient(135deg, var(--primary), #1e4d7b);
+      border-radius: 20px;
+      padding: 32px;
+      color: white;
+      margin-bottom: 20px;
+    }
+    .info-box h3 { color: white; font-size: 1.2rem; margin-bottom: 16px; }
+    .info-step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+    .step-text { font-size: 14px; color: rgba(255,255,255,0.8); }
+    .step-text strong { display: block; color: white; font-size: 14px; margin-bottom: 2px; }
+
+    .success-overlay {
+      display: none;
+      text-align: center;
+      padding: 60px 40px;
+    }
+    .success-overlay.show { display: block; }
+    .success-icon { font-size: 64px; margin-bottom: 20px; }
+    .success-overlay h2 { color: var(--primary); margin-bottom: 12px; }
+    .success-overlay p { color: var(--text-muted); font-size: 15px; font-weight: 300; }
+
+    @media (max-width: 768px) {
+      .enquiry-layout { grid-template-columns: 1fr; }
+      .side-info { position: static; }
+      .checkbox-group { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<script src="nav.js"></script>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <h1>Student Enquiry Form</h1>
+    <p>Fill in your details and we'll reach out to help you get started</p>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <strong>Enquiry Form</strong>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="enquiry-layout">
+
+      <!-- FORM -->
+      <div class="form-card">
+        <div id="formWrapper">
+          <h3 style="margin-bottom:6px;">Course Enquiry Form</h3>
+          <p style="font-size:14px;color:var(--text-muted);margin-bottom:24px;">All fields marked with * are required. We'll contact you within 24 hours.</p>
+
+          <form id="enquiryForm" onsubmit="submitEnquiry(event)">
+
+            <div class="form-section-title">Personal Information</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="e-fname">First Name *</label>
+                <input type="text" id="e-fname" placeholder="Enter first name" required />
+              </div>
+              <div class="form-group">
+                <label for="e-lname">Last Name *</label>
+                <input type="text" id="e-lname" placeholder="Enter last name" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="e-phone">Mobile Number *</label>
+                <input type="tel" id="e-phone" placeholder="+91 XXXXX XXXXX" required pattern="[0-9+\s\-]{10,15}" />
+              </div>
+              <div class="form-group">
+                <label for="e-alt-phone">WhatsApp Number</label>
+                <input type="tel" id="e-alt-phone" placeholder="If different from above" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="e-email">Email Address</label>
+                <input type="email" id="e-email" placeholder="your@email.com" />
+              </div>
+              <div class="form-group">
+                <label for="e-dob">Date of Birth</label>
+                <input type="date" id="e-dob" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="e-gender">Gender</label>
+              <div class="radio-group">
+                <label class="radio-label"><input type="radio" name="gender" value="male" /> Male</label>
+                <label class="radio-label"><input type="radio" name="gender" value="female" /> Female</label>
+                <label class="radio-label"><input type="radio" name="gender" value="other" /> Other</label>
+              </div>
+            </div>
+
+            <div class="form-section-title">Address Details</div>
+            <div class="form-group">
+              <label for="e-address">Address</label>
+              <input type="text" id="e-address" placeholder="Street / Area / Locality" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="e-city">City / Village *</label>
+                <input type="text" id="e-city" placeholder="e.g. Nandurbar" required />
+              </div>
+              <div class="form-group">
+                <label for="e-taluka">Taluka</label>
+                <input type="text" id="e-taluka" placeholder="e.g. Nandurbar" />
+              </div>
+            </div>
+
+            <div class="form-section-title">Educational Background</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="e-edu">Qualification *</label>
+                <select id="e-edu" required>
+                  <option value="">Select qualification</option>
+                  <option>Below 5th Std.</option>
+                  <option>5th – 9th Std.</option>
+                  <option>10th Std. (SSC)</option>
+                  <option>12th Std. (HSC)</option>
+                  <option>ITI / Diploma</option>
+                  <option>Graduate</option>
+                  <option>Post Graduate</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="e-occupation">Occupation</label>
+                <select id="e-occupation">
+                  <option value="">Select occupation</option>
+                  <option>Student</option>
+                  <option>Homemaker</option>
+                  <option>Government Employee</option>
+                  <option>Private Employee</option>
+                  <option>Self-employed / Business</option>
+                  <option>Job Seeker</option>
+                  <option>Farmer</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-section-title">Course Interest</div>
+            <div class="form-group">
+              <label>Which course(s) are you interested in? *</label>
+              <div class="checkbox-group">
+                <label class="checkbox-label"><input type="checkbox" name="course" value="mscit" /> MS-CIT</label>
+                <label class="checkbox-label"><input type="checkbox" name="course" value="klic-tally" /> KLiC Tally Prime</label>
+                <label class="checkbox-label"><input type="checkbox" name="course" value="klic-hardware" /> KLiC Hardware & Networking</label>
+                <label class="checkbox-label"><input type="checkbox" name="course" value="klic-aiml" /> KLiC AI-ML</label>
+                <label class="checkbox-label"><input type="checkbox" name="course" value="klic-design" /> KLiC Graphic Design</label>
+                <label class="checkbox-label"><input type="checkbox" name="course" value="klic-web" /> KLiC Web Development</label>
+                <label class="checkbox-label"><input type="checkbox" name="course" value="klic-digital-mktg" /> KLiC Digital Marketing</label>
+                <label class="checkbox-label"><input type="checkbox" name="course" value="not-sure" /> Not Sure – Need Guidance</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="e-batch">Preferred Batch Timing</label>
+              <select id="e-batch">
+                <option value="">Select preferred time</option>
+                <option>Morning (9:00 AM – 11:00 AM)</option>
+                <option>Late Morning (11:00 AM – 1:00 PM)</option>
+                <option>Afternoon (2:00 PM – 4:00 PM)</option>
+                <option>Evening (4:00 PM – 6:00 PM)</option>
+                <option>Any Time (Flexible)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="e-medium">Preferred Learning Medium</label>
+              <div class="radio-group">
+                <label class="radio-label"><input type="radio" name="medium" value="marathi" /> Marathi</label>
+                <label class="radio-label"><input type="radio" name="medium" value="hindi" /> Hindi</label>
+                <label class="radio-label"><input type="radio" name="medium" value="english" /> English</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="e-source">How did you hear about us?</label>
+              <select id="e-source">
+                <option value="">Select source</option>
+                <option>Friend / Family Recommendation</option>
+                <option>Google Search</option>
+                <option>Social Media</option>
+                <option>Newspaper / Advertisement</option>
+                <option>Walk-in / Visited Centre</option>
+                <option>MKCL Website</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="e-remarks">Any Questions or Remarks</label>
+              <textarea id="e-remarks" placeholder="Ask us anything about the course, fees, batches, or career opportunities..."></textarea>
+            </div>
+
+            <div style="background:rgba(26,58,92,0.05);border-radius:10px;padding:14px;font-size:13px;color:var(--text-muted);margin-bottom:20px;">
+              🔒 Your information is safe with us and will only be used to assist your course enquiry. We do not share data with third parties.
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full" style="font-size:16px;padding:16px;">
+              Submit Enquiry →
+            </button>
+          </form>
+        </div>
+
+        <div class="success-overlay" id="successMsg">
+          <div class="success-icon">🎉</div>
+          <h2>Enquiry Submitted!</h2>
+          <p>Thank you for your interest in ITCT Computer Education. Our team will contact you within 24 hours to guide you further.</p>
+          <div style="margin-top:28px;padding:20px;background:rgba(26,58,92,0.05);border-radius:14px;">
+            <p style="font-size:14px;font-weight:500;color:var(--primary);margin-bottom:8px;">Meanwhile, you can:</p>
+            <p style="font-size:13px;margin-bottom:8px;">📞 Call us directly: <a href="tel:+919876543210" style="color:var(--accent);">+91 98765 43210</a></p>
+            <p style="font-size:13px;margin-bottom:8px;">💬 WhatsApp: <a href="https://wa.me/919876543210" style="color:var(--accent);">+91 98765 43210</a></p>
+            <p style="font-size:13px;">🌐 Visit: <a href="https://mscit.mkcl.org" style="color:var(--accent);" target="_blank">mscit.mkcl.org</a></p>
+          </div>
+          <a href="index.html" class="btn btn-primary" style="margin-top:24px;">← Back to Home</a>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="side-info">
+        <div class="info-box">
+          <h3>📋 Admission Process</h3>
+          <div class="info-step">
+            <div class="step-num">1</div>
+            <div class="step-text"><strong>Fill This Form</strong>Submit your enquiry and our counsellor will contact you.</div>
+          </div>
+          <div class="info-step">
+            <div class="step-num">2</div>
+            <div class="step-text"><strong>Visit Our Centre</strong>Come for a free demo of your chosen course.</div>
+          </div>
+          <div class="info-step">
+            <div class="step-num">3</div>
+            <div class="step-text"><strong>Submit Documents & Fee</strong>Provide your details, ID, photo and pay the fees.</div>
+          </div>
+          <div class="info-step">
+            <div class="step-num">4</div>
+            <div class="step-text"><strong>Get Login & Start Learning</strong>Receive ERA credentials and MKCL Learner App access. Start instantly!</div>
+          </div>
+          <div class="info-step" style="margin-bottom:0;">
+            <div class="step-num">5</div>
+            <div class="step-text"><strong>Appear for Exam & Get Certificate</strong>Clear the online exam and download your MKCL certificate.</div>
+          </div>
+        </div>
+
+        <div style="background:white;border-radius:16px;padding:28px;border:1px solid var(--border);margin-bottom:20px;">
+          <h4 style="font-family:'DM Sans',sans-serif;color:var(--primary);font-size:15px;font-weight:700;margin-bottom:16px;">📞 Quick Contact</h4>
+          <div style="margin-bottom:12px;">
+            <div style="font-size:12px;color:var(--text-muted);margin-bottom:3px;">Phone / WhatsApp</div>
+            <a href="tel:+919876543210" style="color:var(--accent);font-weight:600;font-size:15px;">+91 98765 43210</a>
+          </div>
+          <div style="margin-bottom:12px;">
+            <div style="font-size:12px;color:var(--text-muted);margin-bottom:3px;">Email</div>
+            <a href="mailto:info@itctnandurbar.com" style="color:var(--accent);font-size:14px;">info@itctnandurbar.com</a>
+          </div>
+          <div>
+            <div style="font-size:12px;color:var(--text-muted);margin-bottom:3px;">Centre Hours</div>
+            <div style="font-size:14px;color:var(--text);">Mon–Fri: 9 AM – 7 PM<br/>Sat: 9 AM – 5 PM</div>
+          </div>
+        </div>
+
+        <div style="background:rgba(22,163,74,0.06);border:1.5px solid rgba(22,163,74,0.2);border-radius:14px;padding:20px;">
+          <div style="font-size:13px;font-weight:600;color:#166534;margin-bottom:8px;">✅ Free Demo Available</div>
+          <div style="font-size:13px;color:var(--text-muted);line-height:1.6;">Try MS-CIT or KLiC at no cost before enrolling. Ask us about the Welcome Course.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function submitEnquiry(e) {
+  e.preventDefault();
+  document.getElementById('formWrapper').style.display = 'none';
+  document.getElementById('successMsg').classList.add('show');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>

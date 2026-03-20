@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – ITCT Computer Education, Nandurbar</title>
+  <meta name="description" content="About ITCT Computer Education – The first and leading Authorised MKCL Learning Centre in Nandurbar since 2002." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .timeline {
+      position: relative;
+      padding-left: 32px;
+      margin: 36px 0;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--primary));
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 32px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -28px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .timeline-year {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .timeline-item h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .timeline-item p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .value-item {
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid var(--border);
+    }
+    .value-item .v-icon { font-size: 28px; margin-bottom: 10px; }
+    .value-item h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .value-item p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    @media (max-width: 768px) {
+      .values-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<script src="nav.js"></script>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <h1>About ITCT Computer Education</h1>
+    <p>Two decades of digital empowerment in Nandurbar</p>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <strong>About Us</strong>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT SECTION -->
+<section>
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-placeholder">
+        <div class="big-icon">🏫</div>
+        <h3>ITCT Computer Education</h3>
+        <p>Nandurbar's First & Leading<br/>Authorised MKCL Learning Centre</p>
+        <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+          <span style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:white;padding:6px 14px;border-radius:100px;font-size:12px;font-weight:500;">MS-CIT ALC</span>
+          <span style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:white;padding:6px 14px;border-radius:100px;font-size:12px;font-weight:500;">KLiC ALC</span>
+          <span style="background:rgba(232,96,10,0.3);border:1px solid rgba(232,96,10,0.5);color:#ffaa6e;padding:6px 14px;border-radius:100px;font-size:12px;font-weight:500;">Est. 2002</span>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <span class="tag">Our Story</span>
+        <h2>Nandurbar's First Authorised MKCL Learning Centre</h2>
+        <p>ITCT Computer Education was established in 2002 as the first Authorised Learning Centre (ALC) for MKCL in Nandurbar. Over two decades, we have been at the forefront of digital literacy education in this region, helping thousands of students, professionals, and homemakers acquire essential computer skills.</p>
+        <p>As an Authorised Learning Centre for both MS-CIT and KLiC courses under Maharashtra Knowledge Corporation Limited (MKCL) — a Government of Maharashtra initiative — we deliver certified, quality education using MKCL's world-class ERA e-learning platform.</p>
+        <p>Our institute has grown from a single course offering to a comprehensive digital skills hub, catering to learners of all age groups. We take pride in being not just a computer institute, but a community partner in Nandurbar's journey toward digital empowerment.</p>
+
+        <div class="milestones">
+          <div class="milestone">
+            <div class="num">2002</div>
+            <div class="lbl">Year Established</div>
+          </div>
+          <div class="milestone">
+            <div class="num">5000+</div>
+            <div class="lbl">Students Trained</div>
+          </div>
+          <div class="milestone">
+            <div class="num">20+</div>
+            <div class="lbl">Years of Excellence</div>
+          </div>
+          <div class="milestone">
+            <div class="num">#1</div>
+            <div class="lbl">First ALC in Nandurbar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION & VALUES -->
+<section style="background:white;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+      <div>
+        <span class="tag">Our Purpose</span>
+        <h2 style="color:var(--primary);font-size:2rem;margin-bottom:16px;">Mission & Vision</h2>
+        <p style="color:var(--text-muted);font-size:15px;line-height:1.75;margin-bottom:16px;font-weight:300;"><strong style="color:var(--primary);">Mission:</strong> To empower every individual in Nandurbar and surrounding districts with quality digital literacy and career-ready technology skills through MKCL's world-class educational framework.</p>
+        <p style="color:var(--text-muted);font-size:15px;line-height:1.75;margin-bottom:28px;font-weight:300;"><strong style="color:var(--primary);">Vision:</strong> To be the most trusted IT education institution in Nandurbar district, bridging the digital divide and enabling every learner to thrive in the digital economy.</p>
+
+        <div class="values-grid">
+          <div class="value-item">
+            <div class="v-icon">🎯</div>
+            <h4>Excellence</h4>
+            <p>Committed to the highest standards in teaching, infrastructure, and student outcomes.</p>
+          </div>
+          <div class="value-item">
+            <div class="v-icon">🤝</div>
+            <h4>Integrity</h4>
+            <p>Transparent admissions, honest guidance, and genuine care for every student's success.</p>
+          </div>
+          <div class="value-item">
+            <div class="v-icon">🌱</div>
+            <h4>Inclusivity</h4>
+            <p>Open to all — students, professionals, housewives, and senior citizens without barriers.</p>
+          </div>
+          <div class="value-item">
+            <div class="v-icon">💡</div>
+            <h4>Innovation</h4>
+            <p>Staying updated with AI tools and evolving digital curriculum to keep learners future-ready.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="tag">Our Journey</span>
+        <h2 style="color:var(--primary);font-size:2rem;margin-bottom:24px;">Key Milestones</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2001</div>
+            <h4>MKCL & MS-CIT Launched</h4>
+            <p>Maharashtra Knowledge Corporation Limited launches MS-CIT, Maharashtra's landmark IT literacy initiative.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2002</div>
+            <h4>ITCT Established – First ALC in Nandurbar</h4>
+            <p>ITCT Computer Education becomes the first Authorised Learning Centre for MKCL in Nandurbar, pioneering digital literacy in the region.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2010+</div>
+            <h4>Growing Reputation & Expansion</h4>
+            <p>Thousands of students trained, modern lab infrastructure added, batch sizes and course quality improved significantly.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2016+</div>
+            <h4>KLiC Courses Added</h4>
+            <p>ITCT becomes an Authorised KLiC ALC, offering career-oriented courses across multiple sectors under the MKCL-YCMOU framework.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024–25</div>
+            <h4>AI & Future-Ready Curriculum</h4>
+            <p>MS-CIT's updated syllabus with AI tools is introduced; ITCT embraces the next generation of digital education.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFRASTRUCTURE -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Our Facilities</span>
+      <h2>Infrastructure & Resources</h2>
+      <p>A modern learning environment designed for maximum student engagement and success.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🖥️</div>
+        <h3>Modern Computer Lab</h3>
+        <p>Fully equipped computer lab with up-to-date systems, high-speed internet, and ergonomic seating for a comfortable learning experience.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📡</div>
+        <h3>ERA e-Learning Platform</h3>
+        <p>Access to MKCL's ERA (eLearning Revolution for All) platform with video content, animations, simulations, and online assessments.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📱</div>
+        <h3>MKCL Learner App</h3>
+        <p>Students receive access to the MKCL Learner App with e-books in English, Marathi, and Hindi, available on Android and iOS.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📋</div>
+        <h3>Exam Centre</h3>
+        <p>Authorised examination centre for MS-CIT and KLiC online examinations, conducted in a fair and monitored environment.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🧑‍🏫</div>
+        <h3>Certified Instructors</h3>
+        <p>MKCL-trained and certified teaching staff with years of experience in delivering quality IT education to diverse learners.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">☁️</div>
+        <h3>Digital Connectivity</h3>
+        <p>High-speed broadband internet ensuring smooth access to online learning resources, cloud-based tools, and MKCL portals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="container">
+    <h2>Be Part of the ITCT Legacy</h2>
+    <p>Join Nandurbar's most trusted computer education centre and start your digital journey today.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="enquiry.html" class="btn btn-white">📋 Enquire Now</a>
+      <a href="profile.html" class="btn btn-outline">View Institute Profile</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

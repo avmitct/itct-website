@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Institute Profile – ITCT Computer Education, Nandurbar</title>
+  <meta name="description" content="Institute Profile of ITCT Computer Education – Authorised MKCL ALC in Nandurbar, Maharashtra since 2002." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .profile-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      margin-bottom: 32px;
+    }
+    .profile-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .info-row {
+      display: flex;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--bg);
+      font-size: 14px;
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-label {
+      width: 200px;
+      flex-shrink: 0;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .info-value { color: var(--text); font-weight: 400; }
+    .info-value strong { color: var(--primary); font-weight: 600; }
+
+    .profile-hero-card {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      border-radius: 20px;
+      padding: 48px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 40px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .profile-hero-card::before {
+      content: '';
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(232,96,10,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .profile-logo-big {
+      width: 100px;
+      height: 100px;
+      background: var(--accent);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      font-size: 36px;
+      color: white;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .profile-hero-info h1 {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .profile-hero-info p {
+      color: rgba(255,255,255,0.7);
+      font-size: 15px;
+      font-weight: 300;
+      margin-bottom: 16px;
+    }
+    .profile-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .profile-tag {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.9);
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .cert-card {
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      text-align: center;
+      transition: all 0.25s;
+    }
+    .cert-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+    }
+    .cert-icon { font-size: 36px; margin-bottom: 12px; }
+    .cert-card h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .cert-card p { font-size: 13px; color: var(--text-muted); }
+    .cert-badge {
+      display: inline-block;
+      background: rgba(22,163,74,0.1);
+      color: #166534;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-top: 10px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    @media (max-width: 768px) {
+      .profile-hero-card { flex-direction: column; align-items: flex-start; padding: 32px; }
+      .info-label { width: 140px; }
+      .cert-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<script src="nav.js"></script>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <h1>Institute Profile</h1>
+    <p>Complete details about ITCT Computer Education</p>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <strong>Profile</strong>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+
+    <!-- Profile Hero Card -->
+    <div class="profile-hero-card">
+      <div class="profile-logo-big">IT</div>
+      <div class="profile-hero-info">
+        <h1>ITCT Computer Education</h1>
+        <p>Authorised Learning Centre for MS-CIT & KLiC Courses by MKCL<br/>Nandurbar, Maharashtra · Since 2002</p>
+        <div class="profile-tags">
+          <span class="profile-tag">🏆 First ALC in Nandurbar</span>
+          <span class="profile-tag">✓ MS-CIT Authorised</span>
+          <span class="profile-tag">✓ KLiC Authorised</span>
+          <span class="profile-tag">📅 Est. 2002</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
+      <div>
+        <!-- Basic Info -->
+        <div class="profile-card">
+          <h3>📋 Institute Information</h3>
+          <div class="info-row"><span class="info-label">Institute Name</span><span class="info-value"><strong>ITCT Computer Education</strong></span></div>
+          <div class="info-row"><span class="info-label">Type</span><span class="info-value">Authorised Learning Centre (ALC) – MKCL</span></div>
+          <div class="info-row"><span class="info-label">Established</span><span class="info-value"><strong>2002</strong> (First ALC in Nandurbar)</span></div>
+          <div class="info-row"><span class="info-label">City</span><span class="info-value">Nandurbar, Maharashtra</span></div>
+          <div class="info-row"><span class="info-label">District</span><span class="info-value">Nandurbar</span></div>
+          <div class="info-row"><span class="info-label">State</span><span class="info-value">Maharashtra, India</span></div>
+          <div class="info-row"><span class="info-label">Website</span><span class="info-value"><a href="https://itctnandurbar.com" style="color:var(--accent);">itctnandurbar.com</a></span></div>
+          <div class="info-row"><span class="info-label">Email</span><span class="info-value">info@itctnandurbar.com</span></div>
+        </div>
+
+        <!-- Authorisation -->
+        <div class="profile-card">
+          <h3>🏛️ Authorisation & Affiliation</h3>
+          <div class="info-row"><span class="info-label">Authorised By</span><span class="info-value"><strong>MKCL – Maharashtra Knowledge Corporation Limited</strong></span></div>
+          <div class="info-row"><span class="info-label">Govt. Body</span><span class="info-value">Government of Maharashtra</span></div>
+          <div class="info-row"><span class="info-label">MS-CIT ALC</span><span class="info-value"><strong style="color:var(--success);">✓ Authorised</strong></span></div>
+          <div class="info-row"><span class="info-label">KLiC ALC</span><span class="info-value"><strong style="color:var(--success);">✓ Authorised</strong></span></div>
+          <div class="info-row"><span class="info-label">YCMOU Certified</span><span class="info-value">Yes – for 120-hr KLiC Courses</span></div>
+          <div class="info-row"><span class="info-label">Exam Centre</span><span class="info-value">Authorised exam centre for MS-CIT & KLiC</span></div>
+        </div>
+      </div>
+
+      <div>
+        <!-- Courses -->
+        <div class="profile-card">
+          <h3>📚 Courses Offered</h3>
+          <div class="info-row"><span class="info-label">Primary Course</span><span class="info-value"><strong>MS-CIT</strong> – Maharashtra State Certificate in IT</span></div>
+          <div class="info-row"><span class="info-label">Career Courses</span><span class="info-value"><strong>KLiC</strong> – Knowledge Lit Career (32+ courses)</span></div>
+          <div class="info-row"><span class="info-label">Diploma</span><span class="info-value">KLiC Diploma (any 3 KLiC courses in 1 year)</span></div>
+          <div class="info-row"><span class="info-label">Duration (MS-CIT)</span><span class="info-value">Approx. 3 months</span></div>
+          <div class="info-row"><span class="info-label">Duration (KLiC)</span><span class="info-value">60 hours / 120 hours per course</span></div>
+          <div class="info-row"><span class="info-label">Medium</span><span class="info-value">English, Marathi, Hindi</span></div>
+          <div class="info-row"><span class="info-label">Learning Mode</span><span class="info-value">ERA e-Learning + Lab Practical</span></div>
+          <div class="info-row"><span class="info-label">Free Demo</span><span class="info-value"><strong style="color:var(--success);">Available</strong> – MS-CIT & KLiC Welcome Course</span></div>
+        </div>
+
+        <!-- Stats -->
+        <div class="profile-card">
+          <h3>📊 At a Glance</h3>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:4px;">
+            <div style="background:var(--bg);border-radius:12px;padding:20px;text-align:center;border:1px solid var(--border);">
+              <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--accent);">2002</div>
+              <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Year Established</div>
+            </div>
+            <div style="background:var(--bg);border-radius:12px;padding:20px;text-align:center;border:1px solid var(--border);">
+              <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--primary);">5000+</div>
+              <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Students Trained</div>
+            </div>
+            <div style="background:var(--bg);border-radius:12px;padding:20px;text-align:center;border:1px solid var(--border);">
+              <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--primary);">20+</div>
+              <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Years of Service</div>
+            </div>
+            <div style="background:var(--bg);border-radius:12px;padding:20px;text-align:center;border:1px solid var(--border);">
+              <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--success);">#1</div>
+              <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">First ALC, Nandurbar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="profile-card" style="margin-top:0;">
+      <h3>🏅 Certifications & Recognition</h3>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-icon">🎓</div>
+          <h4>MS-CIT Authorised Learning Centre</h4>
+          <p>Authorised by MKCL to conduct MS-CIT – Maharashtra's most popular IT literacy course. Recognised by the Government of Maharashtra.</p>
+          <span class="cert-badge">✓ Authorised by MKCL</span>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">💼</div>
+          <h4>KLiC Authorised Learning Centre</h4>
+          <p>Authorised to offer KLiC career courses. 120-hour KLiC courses are recognised and certified by Yashwantrao Chavan Maharashtra Open University (YCMOU).</p>
+          <span class="cert-badge">✓ YCMOU Certified Courses</span>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🏆</div>
+          <h4>Pioneer in Nandurbar</h4>
+          <p>Established in 2002 as the first Authorised Learning Centre for MKCL in Nandurbar — a distinction held with pride for over two decades.</p>
+          <span class="cert-badge">✓ Est. 2002 · First ALC</span>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🖥️</div>
+          <h4>Authorised Exam Centre</h4>
+          <p>Certified examination centre for MS-CIT and KLiC online examinations, conducted on MKCL's secure and transparent platform.</p>
+          <span class="cert-badge">✓ Authorised Exam Venue</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="container">
+    <h2>Join Nandurbar's Most Trusted Computer Institute</h2>
+    <p>With over 20 years of excellence, ITCT is your ideal partner for digital education.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="enquiry.html" class="btn btn-white">📋 Enquire Now</a>
+      <a href="contact.html" class="btn btn-outline">📞 Contact Us</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

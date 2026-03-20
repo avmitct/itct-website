@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses – ITCT Computer Education, Nandurbar</title>
+  <meta name="description" content="MS-CIT and KLiC courses at ITCT Computer Education, Nandurbar. Government recognised IT and career courses by MKCL." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 28px 0;
+    }
+    .module-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .module-item .num {
+      background: var(--primary);
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .course-section {
+      padding: 70px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .course-section:last-child { border-bottom: none; }
+    .course-header-block {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .course-highlight {
+      background: linear-gradient(135deg, var(--primary), #1e4d7b);
+      border-radius: 20px;
+      padding: 36px;
+      color: white;
+    }
+    .course-highlight.green {
+      background: linear-gradient(135deg, #1a4a2e, #2d7a4f);
+    }
+    .course-highlight h3 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: white;
+    }
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+    }
+    .highlight-item:last-child { border-bottom: none; }
+    .highlight-icon { font-size: 18px; }
+    .klic-sectors { margin-top: 48px; }
+    .klic-course-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .klic-course-item {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+    .klic-course-item:hover {
+      border-color: #2d7a4f;
+      box-shadow: 0 4px 16px rgba(45,122,79,0.12);
+      transform: translateX(4px);
+    }
+    .klic-course-item .icon { font-size: 22px; }
+    .klic-course-item strong { display: block; font-size: 14px; color: var(--primary); }
+    .klic-course-item span { font-size: 12px; color: var(--text-muted); }
+    .fee-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    .fee-table th, .fee-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .fee-table th {
+      background: var(--primary);
+      color: white;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .fee-table tr:last-child td { border-bottom: none; }
+    .fee-table tr:nth-child(even) td { background: var(--bg); }
+    @media (max-width: 768px) {
+      .course-header-block { grid-template-columns: 1fr; }
+      .module-grid { grid-template-columns: repeat(2, 1fr); }
+      .klic-course-list { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .module-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<script src="nav.js"></script>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <h1>Our Courses</h1>
+    <p>MKCL Authorised · Government Recognised · Career-Ready</p>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <strong>Courses</strong>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- MS-CIT SECTION -->
+  <div class="course-section" id="mscit">
+    <div class="section-header" style="text-align:left;margin-bottom:36px;">
+      <span class="tag">MKCL Flagship Course</span>
+      <h2 style="font-size:2.2rem;">MS-CIT</h2>
+      <p style="max-width:none;">Maharashtra State Certificate in Information Technology — Maharashtra's most popular IT literacy course, started by MKCL in 2001 to help citizens develop essential digital skills in English, Marathi, or Hindi.</p>
+    </div>
+
+    <div class="course-header-block">
+      <div>
+        <h3 style="color:var(--primary);font-size:1.3rem;margin-bottom:16px;">Course Overview</h3>
+        <p style="color:var(--text-muted);font-size:14px;line-height:1.75;margin-bottom:20px;">MS-CIT is an IT literacy course that equips learners with fundamental digital skills needed in personal, professional, and civic life. The updated curriculum now includes AI tools, empowering students to stay future-ready in the digital world.</p>
+
+        <h3 style="color:var(--primary);font-size:1.1rem;margin-bottom:12px;">Eligibility</h3>
+        <p style="color:var(--text-muted);font-size:14px;margin-bottom:24px;">Open to anyone above age 10 who can read and write. Preferably 5th Std. pass. No strict educational qualifications — accessible to students, professionals, homemakers, and senior citizens alike.</p>
+
+        <h3 style="color:var(--primary);font-size:1.1rem;margin-bottom:12px;">Course Modules</h3>
+        <div class="module-grid">
+          <div class="module-item"><span class="num">01</span>Computer Basics</div>
+          <div class="module-item"><span class="num">02</span>Windows OS</div>
+          <div class="module-item"><span class="num">03</span>MS Word</div>
+          <div class="module-item"><span class="num">04</span>MS Excel</div>
+          <div class="module-item"><span class="num">05</span>MS PowerPoint</div>
+          <div class="module-item"><span class="num">06</span>Internet & Email</div>
+          <div class="module-item"><span class="num">07</span>Digital Payments</div>
+          <div class="module-item"><span class="num">08</span>e-Governance</div>
+          <div class="module-item"><span class="num">09</span>Cyber Security</div>
+          <div class="module-item"><span class="num">10</span>AI Tools</div>
+          <div class="module-item"><span class="num">11</span>DigiLocker / UMANG</div>
+          <div class="module-item"><span class="num">12</span>Social Media Safety</div>
+        </div>
+
+        <div style="margin-top:24px;">
+          <a href="enquiry.html" class="btn btn-primary">Enrol in MS-CIT</a>
+          <a href="https://mscit.mkcl.org" target="_blank" class="btn btn-outline" style="color:var(--primary);border-color:var(--primary);margin-left:12px;">Official MKCL Site ↗</a>
+        </div>
+      </div>
+
+      <div class="course-highlight">
+        <h3>📋 Course Details</h3>
+        <div class="highlight-item"><span class="highlight-icon">⏱</span><span><strong>Duration:</strong> Approx. 3 months (flexible batches)</span></div>
+        <div class="highlight-item"><span class="highlight-icon">📚</span><span><strong>Medium:</strong> English, Marathi & Hindi</span></div>
+        <div class="highlight-item"><span class="highlight-icon">📖</span><span><strong>e-Book (BITS):</strong> Available on MKCL Learner App</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🖥️</span><span><strong>Learning:</strong> ERA e-Learning Platform (MKCL)</span></div>
+        <div class="highlight-item"><span class="highlight-icon">📝</span><span><strong>Exam:</strong> Online Examination at our centre</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🎓</span><span><strong>Certificate:</strong> Issued by MKCL (downloadable)</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🆓</span><span><strong>Free Demo:</strong> Welcome course available at no cost</span></div>
+        <div class="highlight-item"><span class="highlight-icon">🤖</span><span><strong>New!</strong> AI Tools now part of curriculum</span></div>
+
+        <div style="margin-top:24px;background:rgba(255,255,255,0.1);border-radius:10px;padding:16px;">
+          <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:6px;">Recognised by</div>
+          <div style="color:white;font-weight:600;font-size:14px;">Government of Maharashtra · MKCL</div>
+          <div style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:4px;">Maharashtra Knowledge Corporation Limited</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KLiC SECTION -->
+  <div class="course-section" id="klic">
+    <div class="section-header" style="text-align:left;margin-bottom:36px;">
+      <span class="tag" style="background:rgba(45,122,79,0.1);color:#2d7a4f;">MKCL Career Courses</span>
+      <h2 style="font-size:2.2rem;">KLiC Courses</h2>
+      <p style="max-width:none;">Knowledge Lit Career (KLiC) — A bridge from college to career. Industry-aligned, skill-focused certificate courses available in 120 hours and 60 hours, certified by YCMOU for 120-hour programmes.</p>
+    </div>
+
+    <div class="course-header-block">
+      <div>
+        <h3 style="color:var(--primary);font-size:1.3rem;margin-bottom:16px;">About KLiC</h3>
+        <p style="color:var(--text-muted);font-size:14px;line-height:1.75;margin-bottom:16px;">KLiC courses are curated by industry experts, mapped to real workplace roles, and delivered through simulation-based, hands-on learning on MKCL's ERA platform. Courses are available across 11 sectors.</p>
+        <p style="color:var(--text-muted);font-size:14px;line-height:1.75;margin-bottom:24px;"><strong style="color:var(--primary);">KLiC Diploma:</strong> Complete any 3 KLiC courses (120-hour each) within 1 year to earn a KLiC Diploma Certificate along with individual course certificates. Placement assistance is provided at no extra charge.</p>
+
+        <h3 style="color:var(--primary);font-size:1.1rem;margin-bottom:16px;">Popular KLiC Courses at ITCT</h3>
+        <div class="klic-course-list">
+          <div class="klic-course-item"><span class="icon">📊</span><div><strong>KLiC Tally Prime</strong><span>Financial Accounting · 120 hrs</span></div></div>
+          <div class="klic-course-item"><span class="icon">🌐</span><div><strong>KLiC Hardware & Networking</strong><span>IT Infrastructure · 120 hrs</span></div></div>
+          <div class="klic-course-item"><span class="icon">🤖</span><div><strong>KLiC AI-ML</strong><span>Artificial Intelligence & ML · 120 hrs</span></div></div>
+          <div class="klic-course-item"><span class="icon">📣</span><div><strong>KLiC Digital Marketing</strong><span>Online Business · 120 hrs</span></div></div>
+          <div class="klic-course-item"><span class="icon">🎨</span><div><strong>KLiC Graphic Design</strong><span>Visual Communication · 120 hrs</span></div></div>
+          <div class="klic-course-item"><span class="icon">💻</span><div><strong>KLiC HTML with CSS</strong><span>Web Development · 60 hrs</span></div></div>
+          <div class="klic-course-item"><span class="icon">🐍</span><div><strong>KLiC Python</strong><span>Programming · 120 hrs</span></div></div>
+          <div class="klic-course-item"><span class="icon">🗂️</span><div><strong>KLiC DTP</strong><span>Desktop Publishing · 60 hrs</span></div></div>
+          <div class="klic-course-item"><span class="icon">🔐</span><div><strong>KLiC Cyber Security</strong><span>IT Security · 120 hrs</span></div></div>
+          <div class="klic-course-item"><span class="icon">📋</span><div><strong>KLiC MS Excel</strong><span>Spreadsheet Expert · 60 hrs</span></div></div>
+        </div>
+
+        <div style="margin-top:28px;">
+          <a href="enquiry.html" class="btn btn-primary" style="background:#2d7a4f;">Enrol in KLiC</a>
+          <a href="https://klic.mkcl.org" target="_blank" class="btn btn-outline" style="color:var(--primary);border-color:var(--primary);margin-left:12px;">Official KLiC Site ↗</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="course-highlight green" style="margin-bottom:24px;">
+          <h3>📋 KLiC Course Details</h3>
+          <div class="highlight-item"><span class="highlight-icon">⏱</span><span><strong>Duration:</strong> 60 or 120 hours per course</span></div>
+          <div class="highlight-item"><span class="highlight-icon">🎓</span><span><strong>Certification:</strong> MKCL + YCMOU (120-hr courses)</span></div>
+          <div class="highlight-item"><span class="highlight-icon">🏭</span><span><strong>Sectors:</strong> 11 sectors, 32+ courses</span></div>
+          <div class="highlight-item"><span class="highlight-icon">🖥️</span><span><strong>Mode:</strong> Computer Lab-Based Practical</span></div>
+          <div class="highlight-item"><span class="highlight-icon">📜</span><span><strong>KLiC Diploma:</strong> Complete 3 courses in 1 year</span></div>
+          <div class="highlight-item"><span class="highlight-icon">💼</span><span><strong>Placement:</strong> Assistance at no extra charge</span></div>
+          <div class="highlight-item"><span class="highlight-icon">🆓</span><span><strong>Free Demo:</strong> Try before you enrol</span></div>
+        </div>
+
+        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:20px;">
+          <h4 style="font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:var(--primary);margin-bottom:14px;">KLiC Sectors Available</h4>
+          <div class="sectors-grid" style="grid-template-columns:repeat(2,1fr);gap:10px;">
+            <div class="sector-card" style="padding:12px;"><div class="sector-icon" style="font-size:22px;">💰</div><h4 style="font-size:12px;">Financial Accounting</h4></div>
+            <div class="sector-card" style="padding:12px;"><div class="sector-icon" style="font-size:22px;">🌐</div><h4 style="font-size:12px;">IT Hardware & Networking</h4></div>
+            <div class="sector-card" style="padding:12px;"><div class="sector-icon" style="font-size:22px;">🎨</div><h4 style="font-size:12px;">Digital Designing</h4></div>
+            <div class="sector-card" style="padding:12px;"><div class="sector-icon" style="font-size:22px;">💻</div><h4 style="font-size:12px;">Software Development</h4></div>
+            <div class="sector-card" style="padding:12px;"><div class="sector-icon" style="font-size:22px;">📊</div><h4 style="font-size:12px;">Data Science</h4></div>
+            <div class="sector-card" style="padding:12px;"><div class="sector-icon" style="font-size:22px;">🎯</div><h4 style="font-size:12px;">Digital Freelancing</h4></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="container">
+    <h2>Not Sure Which Course to Pick?</h2>
+    <p>Fill our enquiry form and our counsellors will guide you to the right course for your career goals.</p>
+    <a href="enquiry.html" class="btn btn-white">Get Free Counselling</a>
+  </div>
+</div>
+
+</body>
+</html>
