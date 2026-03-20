@@ -460,8 +460,8 @@ function getBotResponse(text) {
     addBotMessage(
       "📍 <strong>ITCT Computer Education</strong><br/>" +
       "Nandurbar, Maharashtra – 425412<br/><br/>" +
-      "📞 <strong>+91 98765 43210</strong><br/>" +
-      "✉️ info@itctnandurbar.com<br/><br/>" +
+      "📞 <strong>+91 94222 85998</strong><br/>" +
+      "✉️ 31210003@mkcl.org<br/><br/>" +
       "⏰ Mon–Fri: 9 AM – 7 PM<br/>" +
       "⏰ Saturday: 9 AM – 5 PM<br/>" +
       "❌ Closed Sundays",
@@ -497,8 +497,8 @@ function getBotResponse(text) {
   else {
     addBotMessage(
       "🙏 Thank you for your question! For detailed information, please contact us directly.<br/><br/>" +
-      "📞 <strong>+91 98765 43210</strong><br/>" +
-      "✉️ info@itctnandurbar.com<br/><br/>" +
+      "📞 <strong>+91 94222 85998</strong><br/>" +
+      "✉️ 31210003@mkcl.org<br/><br/>" +
       "Or choose a topic below:",
       ["MS-CIT Course", "KLiC Courses", "Fees & Batches", "Contact Us"]
     );
