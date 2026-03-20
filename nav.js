@@ -66,12 +66,18 @@ const FOOTER_HTML = `
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="#">📍 Nandurbar, Maharashtra</a></li>
-          <li><a href="tel:+919876543210">📞 +91 98765 43210</a></li>
-          <li><a href="mailto:info@itctnandurbar.com">✉ info@itctnandurbar.com</a></li>
+          <li><a href="#">📍 Ghee Bazar, Nandurbar 425 412</a></li>
+          <li><a href="tel:+919422285998">📞 +91 94222 85998</a></li>
+          <li><a href="mailto:31210003@mkcl.org">✉ 31210003@mkcl.org</a></li>
           <li><a href="#">🌐 itctnandurbar.com</a></li>
           <li><a href="https://mscit.mkcl.org" target="_blank">🔗 mscit.mkcl.org</a></li>
           <li><a href="https://klic.mkcl.org" target="_blank">🔗 klic.mkcl.org</a></li>
+          <li style="margin-top:14px;">
+            <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px;display:inline-block;text-align:center;">
+              <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-bottom:8px;letter-spacing:0.5px;">📍 SCAN FOR DIRECTIONS</div>
+              <img src="qrcode.png" alt="Location QR" style="width:90px;height:90px;object-fit:contain;border-radius:6px;background:white;padding:4px;display:block;" />
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -438,7 +444,7 @@ function getBotResponse(text) {
       "• Morning: 9:00 AM – 11:00 AM<br/>" +
       "• Afternoon: 11:00 AM – 1:00 PM<br/>" +
       "• Evening: 4:00 PM – 6:00 PM<br/><br/>" +
-      "📞 Call: <strong>+91 98765 43210</strong>",
+      "📞 Call: <strong>+91 94222 85998</strong>",
       ["Admission Process", "Contact Us", "MS-CIT Course"]
     );
   }
@@ -459,7 +465,7 @@ function getBotResponse(text) {
   else if (text.includes('contact') || text.includes('address') || text.includes('phone') || text.includes('location')) {
     addBotMessage(
       "📍 <strong>ITCT Computer Education</strong><br/>" +
-      "Nandurbar, Maharashtra – 425412<br/><br/>" +
+      "Shop No. 10, Krishna Complex, Ghee Bazar, Near Shirish Kumar Smarak, Nandurbar 425 412<br/><br/>" +
       "📞 <strong>+91 94222 85998</strong><br/>" +
       "✉️ 31210003@mkcl.org<br/><br/>" +
       "⏰ Mon–Fri: 9 AM – 7 PM<br/>" +
