@@ -284,6 +284,252 @@
   </div>
 </section>
 
+<!-- STAFF SECTION -->
+<section style="background:white;padding:70px 0;">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Our Team</span>
+      <h2>Meet Our Staff</h2>
+      <p>Experienced, qualified, and MKCL certified professionals dedicated to delivering quality IT education.</p>
+    </div>
+
+    <style>
+      .staff-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+      }
+      .staff-card {
+        background: white;
+        border: 1.5px solid var(--border);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        display: flex;
+        gap: 0;
+        transition: all 0.3s;
+      }
+      .staff-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-3px);
+        border-color: var(--accent);
+      }
+      .staff-card.head {
+        grid-column: 1 / -1;
+        border-color: var(--primary);
+      }
+      .staff-card.head::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary), var(--accent));
+      }
+      .staff-card { position: relative; }
+      .staff-photo {
+        width: 160px;
+        flex-shrink: 0;
+        overflow: hidden;
+        background: #f0f0f0;
+      }
+      .staff-card.head .staff-photo { width: 200px; }
+      .staff-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+      .staff-info {
+        padding: 24px 28px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .staff-role {
+        display: inline-block;
+        background: rgba(232,96,10,0.1);
+        color: var(--accent);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 4px 12px;
+        border-radius: 100px;
+        margin-bottom: 10px;
+      }
+      .staff-card.head .staff-role {
+        background: rgba(26,58,92,0.1);
+        color: var(--primary);
+      }
+      .staff-info h3 {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 19px;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 14px;
+      }
+      .staff-detail {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 8px;
+        font-size: 13.5px;
+        color: var(--text-muted);
+        line-height: 1.5;
+      }
+      .staff-detail .d-icon {
+        font-size: 15px;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .staff-detail strong { color: var(--primary); }
+      .staff-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 14px;
+      }
+      .staff-tag {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 11px;
+        font-weight: 600;
+        padding: 3px 10px;
+        border-radius: 100px;
+      }
+      @media (max-width: 768px) {
+        .staff-grid { grid-template-columns: 1fr; }
+        .staff-card.head { grid-column: 1; }
+        .staff-photo { width: 120px; }
+        .staff-card.head .staff-photo { width: 120px; }
+        .staff-info { padding: 16px 18px; }
+      }
+      @media (max-width: 480px) {
+        .staff-card { flex-direction: column; }
+        .staff-photo, .staff-card.head .staff-photo { width: 100%; height: 220px; }
+      }
+    </style>
+
+    <div class="staff-grid">
+
+      <!-- Centre Head -->
+      <div class="staff-card head">
+        <div class="staff-photo">
+          <img src="abhijeet.jpg" alt="Mr. Abhijeet V. Mishra" />
+        </div>
+        <div class="staff-info">
+          <span class="staff-role">🏛️ Centre Head</span>
+          <h3>Mr. Abhijeet V. Mishra</h3>
+          <div class="staff-detail">
+            <span class="d-icon">🎓</span>
+            <span><strong>Education:</strong> MSc (Industrial Chemistry), MCM, LL.B.</span>
+          </div>
+          <div class="staff-detail">
+            <span class="d-icon">💼</span>
+            <span><strong>Experience:</strong> Above 25 years in the field of computer training and IT education.</span>
+          </div>
+          <div class="staff-detail">
+            <span class="d-icon">🏆</span>
+            <span><strong>Achievement:</strong> Founded ITCT in 2002 as Nandurbar's first Authorised MKCL Learning Centre. Leading the institute for over two decades.</span>
+          </div>
+          <div class="staff-tags">
+            <span class="staff-tag">MKCL ALC Director</span>
+            <span class="staff-tag">MS-CIT Authorised</span>
+            <span class="staff-tag">KLiC Authorised</span>
+            <span class="staff-tag">25+ Years Experience</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Centre Coordinator -->
+      <div class="staff-card">
+        <div class="staff-photo">
+          <img src="gayatri.jpg" alt="Miss. Gayatri S. Bhavsar" />
+        </div>
+        <div class="staff-info">
+          <span class="staff-role">📋 Centre Coordinator</span>
+          <h3>Miss. Gayatri S. Bhavsar</h3>
+          <div class="staff-detail">
+            <span class="d-icon">🎓</span>
+            <span><strong>Education:</strong> M.Com.</span>
+          </div>
+          <div class="staff-detail">
+            <span class="d-icon">💻</span>
+            <span><strong>Professional:</strong> MS-CIT, KLiC Diploma</span>
+          </div>
+          <div class="staff-detail">
+            <span class="d-icon">💼</span>
+            <span><strong>Experience:</strong> Above 5 years teaching MS-CIT, Tally, and other KLiC courses.</span>
+          </div>
+          <div class="staff-tags">
+            <span class="staff-tag">MS-CIT Certified</span>
+            <span class="staff-tag">KLiC Diploma</span>
+            <span class="staff-tag">5+ Years Exp.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Learning Facilitator - Harshada -->
+      <div class="staff-card">
+        <div class="staff-photo">
+          <img src="harshada.jpg" alt="Miss. Harshada C. Patil" />
+        </div>
+        <div class="staff-info">
+          <span class="staff-role">👩‍🏫 Learning Facilitator</span>
+          <h3>Miss. Harshada C. Patil</h3>
+          <div class="staff-detail">
+            <span class="d-icon">🎓</span>
+            <span><strong>Education:</strong> B.Sc.</span>
+          </div>
+          <div class="staff-detail">
+            <span class="d-icon">💻</span>
+            <span><strong>Professional:</strong> MS-CIT, Tally</span>
+          </div>
+          <div class="staff-detail">
+            <span class="d-icon">💼</span>
+            <span><strong>Experience:</strong> Above 3 years teaching MS-CIT and KLiC courses.</span>
+          </div>
+          <div class="staff-tags">
+            <span class="staff-tag">MS-CIT Certified</span>
+            <span class="staff-tag">Tally Trainer</span>
+            <span class="staff-tag">3+ Years Exp.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Learning Facilitator - Pooja -->
+      <div class="staff-card">
+        <div class="staff-photo">
+          <img src="puja.jpg" alt="Miss. Pooja S. Padvi" />
+        </div>
+        <div class="staff-info">
+          <span class="staff-role">👩‍🏫 Learning Facilitator</span>
+          <h3>Miss. Pooja S. Padvi</h3>
+          <div class="staff-detail">
+            <span class="d-icon">🎓</span>
+            <span><strong>Education:</strong> B.Sc.</span>
+          </div>
+          <div class="staff-detail">
+            <span class="d-icon">💻</span>
+            <span><strong>Professional:</strong> MS-CIT</span>
+          </div>
+          <div class="staff-detail">
+            <span class="d-icon">💼</span>
+            <span><strong>Experience:</strong> Above 3 years teaching MS-CIT courses.</span>
+          </div>
+          <div class="staff-tags">
+            <span class="staff-tag">MS-CIT Certified</span>
+            <span class="staff-tag">3+ Years Exp.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <div class="cta-section">
   <div class="container">
